@@ -41,6 +41,14 @@ regexp:true, undef:true, trailing:true, white:true */
     ]
   });
 
+  // INCIDENT EMAIL PROFILE
+  enyo.kind({
+    name: "XV.IncidentEmailProfilePicker",
+    kind: "XV.PickerWidget",
+    label: "_emailProfile".loc(),
+    collection: "XM.incidentEmailProfiles"
+  });
+
   // ..........................................................
   // INCIDENT CATEGORY
   //
@@ -93,7 +101,21 @@ regexp:true, undef:true, trailing:true, white:true */
     collection: "XM.incidentStatuses",
     valueAttribute: "id"
   });
-  
+
+  // ..........................................................
+  // LOCALE
+  //
+
+  enyo.kind({
+    name: "XV.LocalePicker",
+    kind: "XV.PickerWidget",
+    collection: "XM.locales",
+    nameAttribute: "code",
+    orderBy: [
+      {attribute: 'code'}
+    ]
+  });
+
   // ..........................................................
   // NUMBER POLICY
   //
@@ -194,4 +216,15 @@ regexp:true, undef:true, trailing:true, white:true */
     ]
   });
   
+  // ..........................................................
+  // CHARACTERISTIC TYPE
+  //
+
+  enyo.kind({
+    name: "XV.CharacteristicTypePicker",
+    kind: "XV.PickerWidget",
+    classes: "xv-characteristic-picker",
+    collection: "XM.characteristicTypes"
+  });
+
 }());
